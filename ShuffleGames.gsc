@@ -56,8 +56,8 @@ init()
 
   gameTypes = [];
    
-    // Add game types -> change to suit your gamesettings.
-	// addGameType(fileName, weighting, minBots, maxBots, botSkill)
+// Add game types -> change to suit your gamesettings.
+// addGameType(fileName, weighting, minBots, maxBots, botSkill)
 	
 	
     gameTypes[gameTypes.size] = addGameType("dm.cfg", 8, 0, 6, 2);
@@ -75,13 +75,14 @@ init()
     gameTypes[gameTypes.size] = addGameType("sas.cfg", 3, 0, 6, 2);
 	
 	 
-    // Select a random map and game type based on their weightings
+// Select a random map and game type based on their weightings
    randomMapIndex = randomInt(mapNames.size);
-    selectedMap = mapNames[randomMapIndex];
+selectedMap = mapNames[randomMapIndex];
 
 
-  	  // Extract attributes for the selected game type
-	selectedGameTypeData = selectRandomGametype(gameTypes);
+// Extract attributes for the selected game type
+	
+selectedGameTypeData = selectRandomGametype(gameTypes);
    
     selectedGametype = selectedGameTypeData.fileName;
     minBots = selectedGameTypeData.minBots;
@@ -89,26 +90,24 @@ init()
     botSkill = selectedGameTypeData.botSkill;
 
 
-	botAmount = randomBotsAmount(minBots, maxBots);
+botAmount = randomBotsAmount(minBots, maxBots);
 	
-	println("Selected bot amount:" + botAmount);
-    println("Selected Map : " + selectedMap);
-	println("Selected GameType : " + selectedGametype);
+println("Selected bot amount:" + botAmount);
+println("Selected Map : " + selectedMap);
+println("Selected GameType : " + selectedGametype);
 
-    // Construct the sv_maprotation string
+// Construct the sv_maprotation string
     sv_maprotationString = "exec " + selectedGametype + " map " + selectedMap;
 
-    // Spawn bots
+// Spawn bots
     setDvar("bots_skill", botSkill);
     setDvar("bots_main_kickBotsAtEnd", true);
-	
     setDvar("bots_manage_add",botAmount );
 	
-    // Set additional dvars
-    setDvar("cg_disableplayernames", 1);
+// Set additional dvars
     setDvar("bots_main_waitForHostTime", 15);    
 	
-	// Set the sv_maprotation dvar
+// Set the sv_maprotation dvar
     setDvar("sv_maprotation", sv_maprotationString);
 
 }
