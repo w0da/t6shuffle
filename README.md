@@ -1,6 +1,7 @@
 # t6shuffle
 Simple script for shuffling t6 games, maps and bots
 
+Place shufflegames.gsc into your scripts folder : t6/storage/mp
 
 in the section looking like this:
  
