@@ -9,7 +9,7 @@
 
 
 
-// Create an array to store multiple game types
+
 
 
 main() {
@@ -17,7 +17,7 @@ main() {
 
 init()
 {
-
+// Create an array to store maps
     mapNames = [];
 	
     // List of map names
@@ -53,7 +53,7 @@ init()
     mapNames[29] = "mp_pod";
     mapNames[30] = "mp_takeoff";
 
-
+// Create an array to store gametypes
   gameTypes = [];
    
 // Add game types -> change to suit your gamesettings.
@@ -76,7 +76,7 @@ init()
 	
 	 
 // Select a random map and game type based on their weightings
-   randomMapIndex = randomInt(mapNames.size);
+randomMapIndex = randomInt(mapNames.size);
 selectedMap = mapNames[randomMapIndex];
 
 
@@ -112,6 +112,7 @@ println("Selected GameType : " + selectedGametype);
 
 }
 
+//Function returning gametype object
 addGameType(fileName, weighting, minBots, maxBots, botSkill)
 { 
 
@@ -127,6 +128,7 @@ addGameType(fileName, weighting, minBots, maxBots, botSkill)
 	
 }
 
+//Function returning random gametype based on weighting
 selectRandomGametype(gameTypes)
 {
     // Calculate the total weighting of all game types
@@ -152,7 +154,7 @@ selectRandomGametype(gameTypes)
     }
 }
 
-
+//Function returning random bot amount between min and max , always even.
 randomBotsAmount(min, max)
 {
     rand = randomInt(20); // Generate a random number between 0 and 19
