@@ -141,7 +141,7 @@ selectRandomGametype(gameTypes)
     }
 }
 
-randomBotsAmount(int min, int max)
+randomBotsAmount(min, max)
 {
     int rand = randomInt(20);
 
