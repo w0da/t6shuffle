@@ -143,7 +143,7 @@ selectRandomGametype(gameTypes)
 
 randomBotsAmount(min, max)
 {
-    int rand = randomInt(20);
+    rand = randomInt(20);
 
     if (min == max)
     {
@@ -192,7 +192,7 @@ spawnBots(amount)
    
 	 while(!isHost(level.players[0])){
 	
-	  wait(2); // Give some time
+	  wait(7); // Give some time
 
 	//quick check for players
 	  playerPool = level.players.size;
