@@ -1,7 +1,6 @@
 /*
     Author: woda
     Date: 11/09/2023
- upDate: 15/05/2024
 */
 
 #include maps\mp\gametypes\_globallogic_utils;
@@ -10,6 +9,9 @@
 
 main() {
 }
+
+
+
 
 init()
 {
@@ -49,9 +51,6 @@ init()
 
     gameTypes = [];
 
-
-////////////////        CHANGE VALUES HERE             ////////////////////
-
     gameTypes[gameTypes.size] = addGameType("hc_dm.cfg", 8, 0, 6, 2);
     gameTypes[gameTypes.size] = addGameType("hc_tdm.cfg", 8, 0, 6, 2);
     gameTypes[gameTypes.size] = addGameType("hc_dom.cfg", 8, 0, 6, 2);
@@ -66,6 +65,7 @@ init()
     gameTypes[gameTypes.size] = addGameType("shrp.cfg", 3, 0, 6, 2);
     gameTypes[gameTypes.size] = addGameType("sas.cfg", 3, 0, 6, 2);
 	
+	    
     gameTypes[gameTypes.size] = addGameType("rs_tdm.cfg", 8, 0, 6, 2);
     gameTypes[gameTypes.size] = addGameType("rs_dom.cfg", 8, 0, 6, 2);
     gameTypes[gameTypes.size] = addGameType("rs_dem.cfg", 8, 0, 6, 2);
@@ -76,9 +76,6 @@ init()
     gameTypes[gameTypes.size] = addGameType("rs_gun.cfg", 3, 2, 6, 2);
     gameTypes[gameTypes.size] = addGameType("rs_oneflag.cfg", 2, 0, 6, 2);
     gameTypes[gameTypes.size] = addGameType("rs_dm.cfg", 8, 0, 6, 2);
-
-
-//////////////////////////  DONE   ////////////////////////////////////
 
     randomMapIndex = randomInt(mapNames.size);
     selectedMap = mapNames[randomMapIndex];
@@ -99,7 +96,7 @@ init()
     sv_maprotationString = "exec " + selectedGametype + " map " + selectedMap;
 
     setDvar("bots_skill", botSkill);
-    setdvar( "bots_main_firstIsHost", true );
+	setdvar( "bots_main_firstIsHost", true );
     setDvar("bots_main_kickBotsAtEnd", true);
     setDvar("bots_main_waitForHostTime", 15);
     setDvar("sv_maprotation", sv_maprotationString);
